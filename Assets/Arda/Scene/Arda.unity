@@ -152,6 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f780a30c5bf4faf4bb151ef9c6452759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemies:
+  - {fileID: 8883881677785251451, guid: 35371b61b5958404b881bb687d840c34, type: 3}
+  - {fileID: 652909865387402191, guid: e59c91605c46a54489419ce7a186134c, type: 3}
+  MaxSpawnCount: 0400000002000000
+  waveId: 0
+  spawnPeriod: 2
 --- !u!4 &693499338
 Transform:
   m_ObjectHideFlags: 0
