@@ -15,6 +15,6 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         ai.destination = target.transform.position;
-        Debug.Log(!ai.pathPending);
+        //Debug.Log(!ai.pathPending);
     }
 }

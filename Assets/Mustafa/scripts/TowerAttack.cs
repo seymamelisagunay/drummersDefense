@@ -10,6 +10,8 @@ public class TowerAttack : MonoBehaviour
     public float damage;
     public float range;
     public float cost;
+    public float ditanceRange;
+    public float shootRange;
     public List<Enemy> enemies;
     private void OnTriggerEnter(Collider other)
     {

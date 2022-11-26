@@ -30,6 +30,10 @@ public class enem : MonoBehaviour
         nor = new Vector2(hor, ver);
         move = new Vector3(nor.x, 0, nor.y).normalized* speed;
         rb.velocity = move;
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+
+        }
 
     }
 }
