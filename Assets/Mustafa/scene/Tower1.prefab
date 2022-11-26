@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 6568651589128583106}
   m_Layer: 7
   m_Name: Tower1
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,6 +162,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   gridsTrigs: {fileID: 7893364853279760715}
+  isWall: 0
+  canSeal: 0
 --- !u!114 &6568651589128583106
 MonoBehaviour:
   m_ObjectHideFlags: 0

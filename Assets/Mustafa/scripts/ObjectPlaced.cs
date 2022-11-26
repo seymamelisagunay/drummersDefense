@@ -10,10 +10,8 @@ public class ObjectPlaced : MonoBehaviour
     RaycastHit hit;
     public BoxCollider gridsTrigs;
     GameObject gridSave;
-    void Start()
-    {
-        Debug.Log(name);
-    }
+    public bool isWall;
+    public bool canSeal;
     private void OnTriggerEnter(Collider other)
     {
         if (gridsTrigs.size.x >= 1)
@@ -33,6 +31,8 @@ public class ObjectPlaced : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log(other.name);
+
         if (gridsTrigs.size.x >= 1)
         {
             if (other.tag == "ground")
@@ -46,7 +46,7 @@ public class ObjectPlaced : MonoBehaviour
         }
         
     }
-
+    SphereCollider sphere;
     private void Update()
     {
         if (isPlaced)
@@ -79,7 +79,8 @@ public class ObjectPlaced : MonoBehaviour
             }
 
             transform.position = new Vector3(hit.point.x, 1, hit.point.z);
-            if (Input.GetMouseButtonDown(0))
+           
+             if (Input.GetMouseButtonDown(0))
             {
 
                 bool a = true;
@@ -112,11 +113,88 @@ public class ObjectPlaced : MonoBehaviour
                     }
                        
                     Destroy(gridsTrigs);
-                    Destroy(GetComponent<Rigidbody>());
                     Shop.instante.OpenPanel();
-                    GetComponent<SphereCollider>().enabled = true;
-                }                              
+
+                    TryGetComponent<SphereCollider>(out sphere);
+                    if (sphere != null)
+                    {
+                        sphere.enabled = true;
+
+                    }
+
+                    if (isWall)
+                    {
+                        if (Input.GetMouseButton(0))
+                        {
+                            Shop.instante.buyWall();
+                        }
+                    }
+                    else
+                    {
+                        Destroy(GetComponent<Rigidbody>());
+                    }
+                    canSeal = true;
+                }
+                
             }
+            else if (isWall&& Input.GetMouseButton(0))
+            {
+                bool a = true;
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].GetComponent<grid>().isOpend == false)
+                    {
+                        a = false;
+                        break;
+                    }
+
+                }
+                if ((gridsTrigs.size.x + 1) * (gridsTrigs.size.x + 1) != grids.Count)
+                {
+                    a = false;
+                }
+                if (a)
+                {
+                    Vector3 pos = Vector3.zero;
+                    for (int i = 0; i < grids.Count; i++)
+                    {
+                        pos += grids[i].transform.position;
+                    }
+                    transform.position = new Vector3(pos.x / grids.Count, 1, pos.z / grids.Count);
+                    for (int i = 0; i < grids.Count; i++)
+                    {
+                        grids[i].GetComponent<grid>().isOpend = false;
+                        grids[i].GetComponent<grid>().material.color = Color.white;
+                        isPlaced = true;
+                    }
+
+                    Destroy(gridsTrigs);
+                    Shop.instante.OpenPanel();
+
+                    TryGetComponent<SphereCollider>(out sphere);
+                    if (sphere != null)
+                    {
+                        sphere.enabled = true;
+
+                    }
+
+                    if (Input.GetMouseButton(0))
+                    {
+                        Shop.instante.buyWall();
+                    }
+                    canSeal = true;
+                }
+
+            }
+            else if(isWall)
+            {
+                if (Input.GetMouseButtonUp(0))
+                {
+                    Shop.instante.OpenPanel();
+                    Destroy(gameObject);
+                }
+            }
+
         }
     }
 
