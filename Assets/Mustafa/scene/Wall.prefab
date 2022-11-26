@@ -178,7 +178,7 @@ MonoBehaviour:
   grids: []
   layer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   gridsTrigs: {fileID: 7893364853279760715}
   isWall: 1
   canSeal: 0
