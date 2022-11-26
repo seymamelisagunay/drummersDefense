@@ -5,7 +5,7 @@ using UnityEngine;
 public class grid : MonoBehaviour
 {
     public bool isOpend =true;
-    Material material;
+    public Material material;
     void Start()
     {
         material = GetComponent<MeshRenderer>().material;

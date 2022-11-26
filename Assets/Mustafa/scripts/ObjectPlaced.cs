@@ -8,26 +8,43 @@ public class ObjectPlaced : MonoBehaviour
     bool isPlaced;
     public LayerMask layer;
     RaycastHit hit;
+    public BoxCollider gridsTrigs;
+    GameObject gridSave;
     void Start()
     {
         Debug.Log(name);
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag== "ground")
+        if (gridsTrigs.size.x >= 1)
         {
-            other.GetComponent<grid>().gridColorOpen();
-            grids.Add(other.gameObject);
+            if (other.tag == "ground")
+            {
+                if (!isPlaced)
+                {
+                    other.GetComponent<grid>().gridColorOpen();
+                    grids.Add(other.gameObject);
+                }
+
+            }
         }
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "ground")
+        if (gridsTrigs.size.x >= 1)
         {
-            other.GetComponent<grid>().gridColorClose();
-            grids.Remove(other.gameObject);
+            if (other.tag == "ground")
+            {
+                if (!isPlaced)
+                {
+                    other.GetComponent<grid>().gridColorClose();
+                    grids.Remove(other.gameObject);
+                }
+            }
         }
+        
     }
 
     private void Update()
@@ -40,32 +57,63 @@ public class ObjectPlaced : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(Camera.main.transform.position,ray.direction, out hit, 1000, layer))
         {
+            
+            if (gridsTrigs.size.x < 1)
+            {
+                if (gridSave == null)
+                {
+                    gridSave = hit.transform.gameObject;
+                    grids.Add(hit.transform.gameObject);
+                    hit.transform.GetComponent<grid>().gridColorOpen();
+
+                }
+                if (gridSave!= hit.transform.gameObject)
+                {
+                    gridSave.GetComponent<grid>().gridColorClose();
+                    hit.transform.GetComponent<grid>().gridColorOpen();
+                    grids.Add(hit.transform.gameObject);
+                    grids.Remove(gridSave);
+                    gridSave = hit.transform.gameObject;
+                }
+                
+            }
+
             transform.position = new Vector3(hit.point.x, 1, hit.point.z);
             if (Input.GetMouseButtonDown(0))
             {
+
                 bool a = true;
                 for (int i = 0; i < grids.Count; i++)
                 {
-                    if (grids[i].GetComponent<grid>().isOpend==false)
+                    if (grids[i].GetComponent<grid>().isOpend == false)
                     {
                         a = false;
                         break;
                     }
-                   
+
                 }
                 if (a)
                 {
-                    Vector3 pos=Vector3.zero;
+                    Vector3 pos = Vector3.zero;
+                    for (int i = 0; i < grids.Count; i++)
+                    {
+                        pos += grids[i].transform.position;
+                    }
+                    transform.position = new Vector3(pos.x / grids.Count, 1, pos.z / grids.Count);
                     for (int i = 0; i < grids.Count; i++)
                     {
                         grids[i].GetComponent<grid>().isOpend = false;
+                        grids[i].GetComponent<grid>().material.color = Color.white;
                         isPlaced = true;
-                        pos += grids[i].transform.position;
-                        Debug.Log(pos + " ///////" + grids[i].transform.position+"  /////"+grids.Count);
-
                     }
-                    transform.position = new Vector3(pos.x / 4,1, pos.z / 4);
+                       
+                    grids.Clear();
+                    Destroy(gridsTrigs);
+                    Destroy(GetComponent<Rigidbody>());
+                    Shop.instante.OpenPanel();
                 }
+                
+                
             }
         }
     }
