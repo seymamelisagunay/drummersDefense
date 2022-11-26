@@ -13,9 +13,16 @@ public class TowerAttack : MonoBehaviour
     public float ditanceRange;
     public float shootRange;
     public List<Enemy> enemies;
+
+
+    
+    RaycastHit hit;
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (tag=="enemy")
+        {
+ 
+        }
     }
 
     private void OnTriggerExit(Collider other)

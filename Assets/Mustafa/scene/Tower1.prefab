@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 6568651589128583106}
   - component: {fileID: -3186547380650258957}
   - component: {fileID: 8345061541995821486}
-  - component: {fileID: 5083675271048630863}
+  - component: {fileID: 8958512997817320694}
   m_Layer: 7
   m_Name: Tower1
   m_TagString: tower
@@ -215,6 +215,8 @@ MonoBehaviour:
   damage: 5
   range: 3.5
   cost: 10
+  ditanceRange: 0
+  shootRange: 0
   enemies: []
 --- !u!208 &-3186547380650258957
 NavMeshObstacle:
@@ -245,7 +247,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5083675271048630863
+--- !u!114 &8958512997817320694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,13 +256,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7893364853279760710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7d3f7faee109154daac7ecf2649b1f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2783557f356e9a84f8e33493e20b0c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 0
   damage: 0
   range: 0
   cost: 0
+  ditanceRange: 0
+  shootRange: 0
   enemies: []
-  shootRange: 11
-  hpEnemy: 3

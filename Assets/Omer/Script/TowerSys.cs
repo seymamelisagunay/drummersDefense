@@ -10,6 +10,7 @@ public class TowerSys : TowerAttack
     float time=2f;
     public int hpEnemy=3;
     int towerPower=1;
+    SphereCollider sphere;
      
     private void Start()
     {
