@@ -79,9 +79,6 @@ public class Spawn : MonoBehaviour
                 }
 
             }
-            Debug.Log(total <= 0);
-            Debug.Log(GameManager.waveIsContinious);
-            Debug.Log(GameManager.intance.currentEnemies.Count <= 0);
             yield return new WaitForSeconds(spawnPeriod);
         }
     }
