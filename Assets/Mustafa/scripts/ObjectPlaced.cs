@@ -92,6 +92,10 @@ public class ObjectPlaced : MonoBehaviour
                     }
 
                 }
+                if ((gridsTrigs.size.x + 1) * (gridsTrigs.size.x + 1) != grids.Count)
+                {
+                    a = false;
+                }
                 if (a)
                 {
                     Vector3 pos = Vector3.zero;
@@ -107,13 +111,11 @@ public class ObjectPlaced : MonoBehaviour
                         isPlaced = true;
                     }
                        
-                    grids.Clear();
                     Destroy(gridsTrigs);
                     Destroy(GetComponent<Rigidbody>());
                     Shop.instante.OpenPanel();
-                }
-                
-                
+                    GetComponent<SphereCollider>().enabled = true;
+                }                              
             }
         }
     }
