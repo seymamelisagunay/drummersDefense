@@ -4,15 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< Updated upstream
+  - Undefined
   - ground
   - wall
   - tower
-=======
-  - tower
-  - enemy
-  - bullet
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

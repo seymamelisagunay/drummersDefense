@@ -32,6 +32,7 @@ public class Shop : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(Camera.main.transform.position, ray.direction, out hit, 1000, layer))
         {
+            Debug.Log("yer var");
             if (Input.GetMouseButton(1))
             {
                 if (hit.transform.tag=="wall")
