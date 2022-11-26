@@ -75,6 +75,7 @@ public class Spawn : MonoBehaviour
                     waveCount++;
                     spawnerCounter2 = 0;
                     spawnerCounter1 = 0;
+                    EventManager.WaveEndAction();
 
                 }
 

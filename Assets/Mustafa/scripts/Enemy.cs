@@ -8,6 +8,10 @@ public class Enemy : MonoBehaviour
     NavMeshAgent ai;
     private NavMeshPath path;
     RaycastHit hit;
+    public LayerMask layer;
+    public float coolDown;
+    float timer;
+    public float damage;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Target");
@@ -22,6 +26,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
         ai.destination = target.transform.position;
         if (!ai.pathPending)
         {
@@ -30,12 +35,25 @@ public class Enemy : MonoBehaviour
         else
         {
             
-            if (Physics.Raycast(transform.position, target.transform.position - transform.position, out hit, 1000))
+            if (Physics.Raycast(transform.position, target.transform.position - transform.position, out hit, 1000, layer))
             {
                 if (hit.transform.tag=="wall"|| hit.transform.tag =="tower")
                 {
                     transform.position = Vector3.MoveTowards(transform.position, hit.point, 0.01f);
+                    if (Vector3.Distance(transform.position,hit.point)<2)
+                    {
+                        if (timer>coolDown)
+                        {
+                            hit.transform.GetComponent<ObjeHeal>().getDamage(damage);
+                            timer = 0;
 
+                        }
+                    }
+
+                }
+                else
+                {
+                    Debug.LogError("i cant stay");
                 }
             }
             

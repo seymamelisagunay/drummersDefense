@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 6568651589128583106}
   - component: {fileID: 8917258330063329124}
   - component: {fileID: 8403671037768968035}
+  - component: {fileID: -818720558283576098}
   m_Layer: 7
   m_Name: Tower2
   m_TagString: tower
@@ -244,3 +245,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-818720558283576098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7893364853279760710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ec2e5c986e65546844ff6f4ac43c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heal: 200
+  baseHeal: 0

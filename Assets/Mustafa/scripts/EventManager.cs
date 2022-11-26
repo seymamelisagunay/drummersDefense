@@ -5,10 +5,15 @@ using System;
 public class EventManager : MonoBehaviour
 {
     public static Action showGrid;
+    public static Action WaveEnd;
 
     public static void showGridAction()
     {
         showGrid?.Invoke();
+    }
+    public static void WaveEndAction()
+    {
+        WaveEnd?.Invoke();
     }
     private void Update()
     {
@@ -17,4 +22,5 @@ public class EventManager : MonoBehaviour
             showGridAction();
         }
     }
+
 }

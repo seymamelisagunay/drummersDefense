@@ -98,6 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  layer:
+    serializedVersion: 2
+    m_Bits: 247
+  coolDown: 1
+  damage: 15
 --- !u!195 &3771814135152844389
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -107,7 +112,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3771814135152844395}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1
+  m_Radius: 0.51
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50

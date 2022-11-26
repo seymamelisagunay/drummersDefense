@@ -28,7 +28,14 @@ public class ObjectPlaced : MonoBehaviour
         }
         
     }
-
+    private void OnDestroy()
+    {
+        
+        for (int i = 0; i < grids.Count; i++)
+        {
+            grids[i].GetComponent<grid>().isOpend = true;
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
 

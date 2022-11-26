@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     {
         money = Vmoney;
         waveIsContinious = true;
-        kontrolcu = true;
+        kontrolcu = true;   
         intance = this;
     }
     private void Update()
