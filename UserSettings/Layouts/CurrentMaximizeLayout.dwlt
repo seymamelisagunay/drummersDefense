@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 66844
+  controlID: 69565
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 66845
+  controlID: 69566
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -397,9 +397,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -9.195929, y: -9.630303, z: 10.782975}
+    m_Target: {x: -3.471677, y: -7.664172, z: 3.6763232}
     speed: 2
-    m_Value: {x: -9.195929, y: -9.630303, z: 10.782975}
+    m_Value: {x: -3.471677, y: -7.664172, z: 3.6763232}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -446,13 +446,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.404084, y: 0.091974184, z: -0.040930066, w: -0.90923166}
+    m_Target: {x: -0.43411693, y: 0.13056973, z: -0.06381054, w: -0.8891268}
     speed: 2
-    m_Value: {x: -0.40542293, y: 0.09190713, z: -0.041065536, w: -0.90856975}
+    m_Value: {x: -0.43411696, y: 0.13056973, z: -0.06381054, w: -0.8891268}
   m_Size:
-    m_Target: 10
+    m_Target: 10.392304
     speed: 2
-    m_Value: 10
+    m_Value: 10.392304
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -594,7 +594,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 66821
+  controlID: 69487
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -652,10 +652,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 5ead0600
+      scrollPos: {x: 0, y: 9.199997}
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3adaf2ff22ecf2ff4cf0f2fff6faf2ff1afef2fffa0bf3ff800ff3ff1a7ef3ff687ef3ff348cf4ffd263f7ff7a64f7fffcf4f7ff9cf7f7ffd429feff5479feffba5bffff8c5cffffae5cffffba61ffff8c62ffffc664ffffe2b4ffff16fbffffc89400000c9e00007ce60000c0ef00000e19060028410600e64b06001ed90600c2ed19008cf819001acc27005e18280034212800ae222800fe2b2800
+      m_ExpandedIDs: 3adaf2ff22ecf2ff4cf0f2fff6faf2ff1afef2fffa0bf3ff800ff3ff1a7ef3ff687ef3ff348cf4ffd263f7ff7a64f7fffcf4f7ff9cf7f7ffd429feff5479feffba5bffff8c5cffffae5cffffba61ffff8c62ffffc664ffffe2b4ffff16fbffffc89400000c9e00007ce60000c0ef00000e19060028410600e64b06001ed90600c2ed19008cf819001acc27005e182800fe2b2800
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -747,22 +747,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Mustafa/scene
+    - Assets/Omer/Other
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Mustafa/scene
+  - Assets/Omer/Other
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\ozalp\Documents\GitHub\drummersDefense
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a4b50000
-    m_LastClickedID: 46500
-    m_ExpandedIDs: 0000000090b5000098b500009cb500004664110000ca9a3b
+    m_SelectedIDs: a4990400
+    m_LastClickedID: 301476
+    m_ExpandedIDs: 0000000090b5000098b500009cb500009eb500004664110000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -790,7 +790,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000090b5000098b500009cb500004664110000ca9a3b
+    m_ExpandedIDs: 0000000090b5000098b500009cb500009eb500004664110000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -815,9 +815,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 5ead0600
-    m_LastClickedInstanceID: 437598
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
