@@ -12,6 +12,7 @@ public class ammo : MonoBehaviour
         if (other.tag=="enemy")
         {
             other.GetComponent<Enemy>().getDamage(damage);
+            Destroy(gameObject);
         }
     }
     void Update()
