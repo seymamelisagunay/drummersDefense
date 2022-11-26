@@ -25,7 +25,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 9892
+=======
+  controlID: 4310
+>>>>>>> Stashed changes
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +147,11 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 9893
+=======
+  controlID: 4311
+>>>>>>> Stashed changes
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -526,7 +534,11 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 9921
+=======
+  controlID: 4333
+>>>>>>> Stashed changes
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -586,9 +598,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< Updated upstream
       m_SelectedIDs: a87c0000
       m_LastClickedID: 31912
       m_ExpandedIDs: 6606fefffa5afeff1e5dfeffd846ffff16fbffff5e6b0000a87c0000cc8800003e8d00004e9300000c9e000056b00000
+=======
+      m_SelectedIDs: 92970300
+      m_LastClickedID: 235410
+      m_ExpandedIDs: ba5bffff8c5cffffae5cffffba61ffff8c62ffffc664ffffe2b4ffff16fbffffc89400000c9e00007ce60000c0ef0000
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -777,8 +795,13 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< Updated upstream
     m_SelectedInstanceIDs: a87c0000
     m_LastClickedInstanceID: 31912
+=======
+    m_SelectedInstanceIDs: 92970300
+    m_LastClickedInstanceID: 235410
+>>>>>>> Stashed changes
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
