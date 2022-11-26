@@ -9,6 +9,7 @@ TagManager:
   - wall
   - tower
   - Target
+  - enemy
   layers:
   - Default
   - TransparentFX

@@ -37,14 +37,17 @@ public class Shop : MonoBehaviour
             closePanel();
         }
         moneyText.text = GameManager.money + "";
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(Camera.main.transform.position, ray.direction, out hit, 1000, layer))
+        if (Physics.Raycast(ray, out hit, 1000, layer))
         {
-
+            Debug.DrawLine(Camera.main.transform.position , hit.point,Color.magenta);
             if (Input.GetMouseButton(1))
             {
                 if (hit.transform.tag=="wall")
                 {
+                    Debug.Log("giriyor walll");
+
                     if (hit.transform.GetComponent<ObjectPlaced>().canSeal)
                     {
                         GameManager.money += wall1Price;
@@ -60,6 +63,8 @@ public class Shop : MonoBehaviour
 
                 if (hit.transform.tag == "tower")
                 {
+                    Debug.Log("giriyor tower");
+
                     if (hit.transform.GetComponent<ObjectPlaced>().canSeal)
                     {
                         GameManager.money += hit.transform.GetComponent<TowerAttack>().cost;

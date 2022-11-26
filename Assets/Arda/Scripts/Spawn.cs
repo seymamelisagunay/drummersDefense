@@ -59,12 +59,10 @@ public class Spawn : MonoBehaviour
                         total--;
                     
                 }
-                Debug.Log(total);
             }
             if (total <= 0)
             {
                
-                Debug.Log("wawe bitti");
                 GameManager.waveIsContinious = false;
                 
                 if (GameManager.intance.currentEnemies.Count <= 0&&GameManager.intance.kontrolcu)

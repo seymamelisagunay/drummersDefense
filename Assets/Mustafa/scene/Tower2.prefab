@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6818692907310764910}
   - component: {fileID: 7516499834693770319}
   - component: {fileID: 5846877614939492831}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 1
+  timer: 0
   damage: 10
   range: 5
   cost: 20
