@@ -6,22 +6,36 @@ public class Enemy : MonoBehaviour
 {
     public GameObject target;
     NavMeshAgent ai;
-    private NavMeshPath path;
     RaycastHit hit;
     public LayerMask layer;
     public float coolDown;
     float timer;
     public float damage;
+    public float heal;
+    public List<TowerAttack> TowerAttackTriggers;
+    public float cost;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Target");
         ai = GetComponent<NavMeshAgent>();
-        path = new NavMeshPath();
     }
 
     private void OnDestroy()
     {
         GameManager.intance.currentEnemies.Remove(this.gameObject);
+        for (int i = 0; i < TowerAttackTriggers.Count; i++)
+        {
+            TowerAttackTriggers[i].enemies.Remove(this.gameObject);
+        }
+    }
+    public void getDamage(float a)
+    {
+        heal -= a;
+        if (heal<=0)
+        {
+            GameManager.money += cost;
+            Destroy(gameObject);
+        }
     }
     // Update is called once per frame
     void Update()
@@ -51,10 +65,7 @@ public class Enemy : MonoBehaviour
                     }
 
                 }
-                else
-                {
-                    Debug.LogError("i cant stay");
-                }
+
             }
             
         }

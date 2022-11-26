@@ -14,6 +14,11 @@ public class ObjectPlaced : MonoBehaviour
     public bool canSeal;
     private void OnTriggerEnter(Collider other)
     {
+        if (isPlaced)
+        {
+            return;
+
+        }
         if (gridsTrigs.size.x >= 1)
         {
             if (other.tag == "ground")
@@ -38,7 +43,11 @@ public class ObjectPlaced : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        if (isPlaced)
+        {
+            return;
 
+        }
         if (gridsTrigs.size.x >= 1)
         {
             if (other.tag == "ground")
