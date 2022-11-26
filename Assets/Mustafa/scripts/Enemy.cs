@@ -12,6 +12,10 @@ public class Enemy : MonoBehaviour
         ai = GetComponent<NavMeshAgent>();
     }
 
+    private void OnDestroy()
+    {
+        GameManager.intance.currentEnemies.Remove(this.gameObject);
+    }
     // Update is called once per frame
     void Update()
     {

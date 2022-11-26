@@ -15,6 +15,7 @@ public class Shop : MonoBehaviour
     public float wall1Price;
     public LayerMask layer;
     RaycastHit hit;
+    public bool onPresCreat;
 
     private void Awake()
     {
@@ -24,10 +25,17 @@ public class Shop : MonoBehaviour
     void Start()
     {
         instante = this;
-        
+        closePanel();
+        onPresCreat = false;
+
+
     }
     private void Update()
     {
+        if (GameManager.waveIsContinious&&shopPanel.activeSelf)
+        {
+            closePanel();
+        }
         moneyText.text = GameManager.money + "";
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(Camera.main.transform.position, ray.direction, out hit, 1000, layer))
@@ -103,7 +111,10 @@ public class Shop : MonoBehaviour
 
     public void closePanel()
     {
-        shopPanel.SetActive(false);
+        
+            shopPanel.SetActive(false);
+        
+      
     }
 
     public void OpenPanel()

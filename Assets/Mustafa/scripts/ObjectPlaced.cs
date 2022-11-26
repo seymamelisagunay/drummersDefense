@@ -123,7 +123,7 @@ public class ObjectPlaced : MonoBehaviour
 
                     if (isWall)
                     {
-                        if (Input.GetMouseButton(0))
+                        if (Input.GetMouseButton(0)&&!GameManager.waveIsContinious)
                         {
                             Shop.instante.buyWall();
                         }
@@ -170,7 +170,7 @@ public class ObjectPlaced : MonoBehaviour
                     Destroy(gridsTrigs);
                     Shop.instante.OpenPanel();
 
-                    if (Input.GetMouseButton(0))
+                    if (Input.GetMouseButton(0) && !GameManager.waveIsContinious)
                     {
                         Shop.instante.buyWall();
                     }
