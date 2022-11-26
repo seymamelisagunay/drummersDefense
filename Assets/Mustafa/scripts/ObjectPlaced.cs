@@ -31,7 +31,6 @@ public class ObjectPlaced : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.name);
 
         if (gridsTrigs.size.x >= 1)
         {
@@ -170,13 +169,6 @@ public class ObjectPlaced : MonoBehaviour
 
                     Destroy(gridsTrigs);
                     Shop.instante.OpenPanel();
-
-                    TryGetComponent<SphereCollider>(out sphere);
-                    if (sphere != null)
-                    {
-                        sphere.enabled = true;
-
-                    }
 
                     if (Input.GetMouseButton(0))
                     {
