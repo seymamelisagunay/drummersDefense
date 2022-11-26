@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AddSpeed : MonoBehaviour
 {
-    GameObject gameObject;
+    
     public float speed;
     public bool xBool;
     public bool yBool;
