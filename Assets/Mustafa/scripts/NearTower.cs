@@ -4,15 +4,35 @@ using UnityEngine;
 
 public class NearTower : TowerAttack
 {
-    // Start is called before the first frame update
+    GameObject targetEnemy;
+    public GameObject ammo;
+
     void Start()
     {
-        
+        StartCoroutine("fire");
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        if (enemies.Count>0&& targetEnemy==null)
+        {
+            targetEnemy = enemies[0];
+        }
+
+    }
+
+    IEnumerator fire ()
+    {
+        while (true)
+        {
+            if (targetEnemy!=null)
+            {
+                GameObject a = Instantiate(ammo,transform.position,Quaternion.identity);
+                a.GetComponent<ammo>().target = targetEnemy;
+                a.GetComponent<ammo>().damage = damage;
+            }
+            yield return new WaitForSeconds(coolDown);
+        }
     }
 }
