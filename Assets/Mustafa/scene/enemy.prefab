@@ -102,7 +102,7 @@ MonoBehaviour:
   target: {fileID: 0}
   layer:
     serializedVersion: 2
-    m_Bits: 247
+    m_Bits: 128
   coolDown: 1
   damage: 15
   heal: 100

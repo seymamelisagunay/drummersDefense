@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     public static bool waveIsContinious;
     public bool kontrolcu;
-    float timer;
+    [HideInInspector]public float timer;
     public List<GameObject> currentEnemies;
     void Start()
     {

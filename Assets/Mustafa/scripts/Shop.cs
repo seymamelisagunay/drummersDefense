@@ -6,6 +6,7 @@ public class Shop : MonoBehaviour
 {
     public static Shop instante;
     public Text moneyText;
+    public Text WaveTime;
     public GameObject shopPanel;
     public GameObject tower1;
     public GameObject tower2;
@@ -37,7 +38,16 @@ public class Shop : MonoBehaviour
             closePanel();
         }
         moneyText.text = GameManager.money + "";
-        
+        if (GameManager.intance.spawmIsStoped)
+        {
+            WaveTime.text = (int)(GameManager.intance.waveBreakTime - GameManager.intance.timer) + "";
+        }
+        else
+        {
+            WaveTime.text = "";
+        }
+       
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 1000, layer))
         {
