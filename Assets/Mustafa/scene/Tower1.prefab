@@ -55,7 +55,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740161480142996811}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 4
@@ -182,6 +182,7 @@ MonoBehaviour:
   range: 3.5
   cost: 10
   enemies: []
+  ammo: {fileID: 0}
 --- !u!208 &-3186547380650258957
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -291,6 +292,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tower1Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789350997513812327, guid: 69228b6b0b451e74ba2367300a03e93e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69228b6b0b451e74ba2367300a03e93e, type: 3}
