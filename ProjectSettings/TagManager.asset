@@ -8,6 +8,7 @@ TagManager:
   - ground
   - wall
   - tower
+  - Target
   layers:
   - Default
   - TransparentFX

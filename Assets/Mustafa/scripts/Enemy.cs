@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     NavMeshAgent ai;
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Target");
         ai = GetComponent<NavMeshAgent>();
     }
 
