@@ -157,7 +157,7 @@ MonoBehaviour:
   - {fileID: 652909865387402191, guid: e59c91605c46a54489419ce7a186134c, type: 3}
   MaxSpawnCount: 0400000002000000
   Waves:
-  - {x: 2, y: 3}
+  - {x: 5, y: 3}
   waveId: 0
   IsWaveStarted: 1
   spawnPeriod: 2
