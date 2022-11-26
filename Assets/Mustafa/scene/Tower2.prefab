@@ -114,7 +114,6 @@ GameObject:
   - component: {fileID: 6568651589128583106}
   - component: {fileID: 8917258330063329124}
   - component: {fileID: 8403671037768968035}
-  - component: {fileID: 6930919987269928922}
   m_Layer: 7
   m_Name: Tower2
   m_TagString: tower
@@ -215,8 +214,6 @@ MonoBehaviour:
   damage: 10
   range: 5
   cost: 20
-  ditanceRange: 0
-  shootRange: 0
   enemies: []
 --- !u!208 &8917258330063329124
 NavMeshObstacle:
@@ -247,23 +244,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6930919987269928922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7893364853279760710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7d3f7faee109154daac7ecf2649b1f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coolDown: 0
-  damage: 0
-  range: 0
-  cost: 0
-  ditanceRange: 5
-  shootRange: 11
-  enemies: []
-  hpEnemy: 3
