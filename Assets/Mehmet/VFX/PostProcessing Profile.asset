@@ -18,8 +18,54 @@ MonoBehaviour:
     m_Value: {r: 0.21698111, g: 0.18934673, b: 0.18934673, a: 1}
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+    m_Value: {r: 0.20754719, g: 0, b: 0, a: 1}
   balance:
+    m_OverrideState: 0
+    m_Value: 0
+--- !u!114 &-2072097340197575580
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: 
+  active: 1
+  mode:
+    m_OverrideState: 0
+    m_Value: 0
+  gaussianStart:
+    m_OverrideState: 0
+    m_Value: 10
+  gaussianEnd:
+    m_OverrideState: 0
+    m_Value: 30
+  gaussianMaxRadius:
+    m_OverrideState: 0
+    m_Value: 1
+  highQualitySampling:
+    m_OverrideState: 0
+    m_Value: 0
+  focusDistance:
+    m_OverrideState: 0
+    m_Value: 10
+  aperture:
+    m_OverrideState: 0
+    m_Value: 5.6
+  focalLength:
+    m_OverrideState: 0
+    m_Value: 50
+  bladeCount:
+    m_OverrideState: 0
+    m_Value: 5
+  bladeCurvature:
+    m_OverrideState: 0
+    m_Value: 1
+  bladeRotation:
     m_OverrideState: 0
     m_Value: 0
 --- !u!114 &11400000
@@ -41,6 +87,7 @@ MonoBehaviour:
   - {fileID: 1662047104021585603}
   - {fileID: -4404674190592250969}
   - {fileID: 2654111539560649787}
+  - {fileID: -2072097340197575580}
 --- !u!114 &1662047104021585603
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -65,13 +112,13 @@ MonoBehaviour:
     m_Value: 0
   greenOutRedIn:
     m_OverrideState: 1
-    m_Value: 12
+    m_Value: 94
   greenOutGreenIn:
     m_OverrideState: 1
-    m_Value: 108
+    m_Value: 200
   greenOutBlueIn:
     m_OverrideState: 1
-    m_Value: -8
+    m_Value: -200
   blueOutRedIn:
     m_OverrideState: 1
     m_Value: -0
@@ -142,7 +189,7 @@ MonoBehaviour:
     m_Value: 0
   skipIterations:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 7
   dirtTexture:
     m_OverrideState: 0
     m_Value: {fileID: 0}

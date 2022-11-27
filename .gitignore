@@ -62,3 +62,4 @@ crashlytics-build.properties
 *.dwlt
 *.dwlt
 UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+*.dwlt

@@ -35,6 +35,39 @@ public class Shop : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (GameManager.money >= tower1Price)
+            {
+                GameManager.money -= tower1Price;
+                Instantiate(tower1, Vector3.up * -5, Quaternion.identity);
+                closePanel();
+
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            if (GameManager.money >= tower2Price)
+            {
+                GameManager.money -= tower2Price;
+                Instantiate(tower2, Vector3.up * -5, Quaternion.identity);
+                closePanel();
+
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (GameManager.money >= wall1Price)
+            {
+                GameManager.money -= wall1Price;
+                Instantiate(wall1, Vector3.up * -5, Quaternion.identity);
+                closePanel();
+
+            }
+        }
+
         if (GameManager.waveIsContinious&&shopPanel.activeSelf)
         {
             closePanel();
@@ -112,6 +145,8 @@ public class Shop : MonoBehaviour
 
         }
     }
+
+ 
     public void buyTower2()
     {
         if (GameManager.money >= tower2Price)
