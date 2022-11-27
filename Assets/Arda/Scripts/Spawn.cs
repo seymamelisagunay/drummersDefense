@@ -8,8 +8,6 @@ public class Spawn : MonoBehaviour
     public List<int> MaxSpawnCount;
     public List<Vector2> Waves;
     public bool IsWaveStarted;
-    private float nextSpawnTime = 0;
-    private float nextSpawnTime1 = 0;
     private int spawnerCounter1;
     private int spawnerCounter2;
     [SerializeField] private float spawnPeriod = 2f;
