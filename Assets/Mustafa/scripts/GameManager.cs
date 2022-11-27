@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
                 Shop.instante.onPresCreat = false;
                 Shop.instante.closePanel();
                 timer = 0;
+                AudioSource.PlayClipAtPoint(Shop.instante.clips[2], Vector3.zero);
 
             }
         }
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
                 waveCount++;               
                 EventManager.WaveEndAction();
                 spawmIsStoped = true;
+                AudioSource.PlayClipAtPoint(Shop.instante.clips[3], Vector3.zero);
                 kontrolcu = false;
 
             }

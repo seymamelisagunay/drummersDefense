@@ -17,20 +17,21 @@ public class Shop : MonoBehaviour
     public LayerMask layer;
     RaycastHit hit;
     public bool onPresCreat;
-    public AudioSource moneySpendSound;
+    public AudioClip[] clips;
 
 
     private void Awake()
     {
+        instante = this;
         tower1Price = tower1.GetComponent<TowerAttack>().cost;
         tower2Price = tower2.GetComponent<TowerAttack>().cost;
     }
     void Start()
     {
-        instante = this;
+       
         closePanel();
         onPresCreat = false;
-        moneySpendSound = GetComponent<AudioSource>();
+       
 
 
     }
@@ -139,7 +140,7 @@ public class Shop : MonoBehaviour
     {
         if (GameManager.money>= tower1Price)
         {
-            moneySpendSound.Play();
+            AudioSource.PlayClipAtPoint(clips[0], Vector3.zero);
             GameManager.money -= tower1Price;
             Instantiate(tower1, Vector3.up*-5, Quaternion.identity);
             closePanel();
@@ -152,7 +153,7 @@ public class Shop : MonoBehaviour
     {
         if (GameManager.money >= tower2Price)
         {
-            moneySpendSound.Play();
+            AudioSource.PlayClipAtPoint(clips[0], Vector3.zero);
             GameManager.money -= tower2Price;
             Instantiate(tower2, Vector3.up * -5, Quaternion.identity);
             closePanel();
@@ -163,7 +164,7 @@ public class Shop : MonoBehaviour
     {
         if (GameManager.money >= wall1Price)
         {
-            moneySpendSound.Play();
+            AudioSource.PlayClipAtPoint(clips[0], Vector3.zero);
             GameManager.money -= wall1Price;
             Instantiate(wall1, Vector3.up * -5, Quaternion.identity);
             closePanel();
@@ -175,19 +176,21 @@ public class Shop : MonoBehaviour
     {
         
             shopPanel.SetActive(false);
-        
-      
+            AudioSource.PlayClipAtPoint(clips[1], Vector3.zero);
+
     }
 
     public void OpenPanel()
     {
         shopPanel.SetActive(true);
+        AudioSource.PlayClipAtPoint(clips[1], Vector3.zero);
     }
     public void EndShopping()
     {
         GameManager.intance.waveBreakTime = 0;
         WaveTime.text = (int)(GameManager.intance.waveBreakTime - GameManager.intance.timer) + "";
         closePanel();
+        AudioSource.PlayClipAtPoint(clips[2], Vector3.zero);
     }
 
     public void buyTower1btn()

@@ -147,6 +147,7 @@ public class ObjectPlaced : MonoBehaviour
                     else
                     {
                         Destroy(GetComponent<Rigidbody>());
+                        AudioSource.PlayClipAtPoint(Shop.instante.clips[4], Vector3.zero);
                     }
                     canSeal = true;
                 }
@@ -191,6 +192,7 @@ public class ObjectPlaced : MonoBehaviour
                         Shop.instante.buyWall();
                     }
                     canSeal = true;
+                    AudioSource.PlayClipAtPoint(Shop.instante.clips[5], Vector3.zero);
                 }
 
             }
