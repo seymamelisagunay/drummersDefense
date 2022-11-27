@@ -47,7 +47,7 @@ public class Spawn : MonoBehaviour
                         total--;
                     
                 }
-
+                yield return new WaitForSeconds(spawnPeriod/2);
 
 
                 if (spawnerCounter1 != Waves[waveCount].x)
