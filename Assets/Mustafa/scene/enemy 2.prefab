@@ -109,7 +109,7 @@ MonoBehaviour:
   damage: 10
   heal: 300
   TowerAttackTriggers: []
-  cost: 30
+  cost: 20
 --- !u!195 &3771814135152844389
 NavMeshAgent:
   m_ObjectHideFlags: 0

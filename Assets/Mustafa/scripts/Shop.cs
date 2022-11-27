@@ -74,7 +74,7 @@ public class Shop : MonoBehaviour
         {
             closePanel();
         }
-        moneyText.text = GameManager.money + "";
+        moneyText.text = "GOLD: "+ GameManager.money + "";
         if (GameManager.intance.spawmIsStoped)
         {
             WaveTime.text = (int)(GameManager.intance.waveBreakTime - GameManager.intance.timer) + "";
@@ -240,7 +240,7 @@ public class Shop : MonoBehaviour
 
     public void EndShoppingBtn()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             GameManager.intance.waveBreakTime = 0;
             WaveTime.text = (int)(GameManager.intance.waveBreakTime - GameManager.intance.timer) + "";
