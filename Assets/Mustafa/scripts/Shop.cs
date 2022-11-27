@@ -149,6 +149,8 @@ public class Shop : MonoBehaviour
     }
     public void EndShopping()
     {
+        GameManager.intance.waveBreakTime = 0;
+        WaveTime.text = (int)(GameManager.intance.waveBreakTime - GameManager.intance.timer) + "";
         closePanel();
     }
 
@@ -207,6 +209,8 @@ public class Shop : MonoBehaviour
         }
 
     }
+
+ 
 }
  
  
