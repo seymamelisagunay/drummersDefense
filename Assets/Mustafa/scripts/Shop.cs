@@ -48,7 +48,9 @@ public class Shop : MonoBehaviour
         {
             WaveTime.text = "";
         }
-       
+
+
+        
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 1000, layer))
@@ -92,7 +94,11 @@ public class Shop : MonoBehaviour
                 }
                 
             }
+
+            
         }
+
+        buyTower1btn(); buyTower2btn(); buyWallbtn();
     }
 
     public void buyTower1()
@@ -145,4 +151,54 @@ public class Shop : MonoBehaviour
     {
         closePanel();
     }
+
+    public void buyTower1btn()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && shopPanel.activeSelf)
+        {
+            if (GameManager.money >= tower1Price)
+            {
+                GameManager.money -= tower1Price;
+                Instantiate(tower1, Vector3.up * -5, Quaternion.identity);
+                closePanel();
+
+            }
+        }
+
+    }
+
+
+    public void buyTower2btn()
+    {
+        if (Input.GetKeyDown(KeyCode.W) && shopPanel.activeSelf)
+        {
+            if (GameManager.money >= tower2Price)
+            {
+                GameManager.money -= tower2Price;
+                Instantiate(tower2, Vector3.up * -5, Quaternion.identity);
+                closePanel();
+
+            }
+        }
+    }
+
+
+    public void buyWallbtn()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && shopPanel.activeSelf)
+        {
+            if (GameManager.money >= wall1Price)
+            {
+                GameManager.money -= wall1Price;
+                Instantiate(wall1, Vector3.up * -5, Quaternion.identity);
+                closePanel();
+
+            }
+        }
+    }
 }
+ 
+ 
+
+
+ 
