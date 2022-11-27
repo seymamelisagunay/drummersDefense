@@ -11,40 +11,44 @@ public class Spawn : MonoBehaviour
     private int spawnerCounter1;
     private int spawnerCounter2;
     [SerializeField] private float spawnPeriod = 2f;
-    float total;
     int waveCount = 0;
     
 
     private void Start()
     {
+        sýfýrlama();
         StartCoroutine("spawmObj");
+       
     }
     void Update()
     {
-        IsWaveStarted = GameManager.waveIsContinious;
+        IsWaveStarted = GameManager.intance.waveIsContinious;
+       waveCount = GameManager.intance.waveCount;
 
-
- 
-
+        Debug.Log("spawnerCounter1 " + spawnerCounter1 + "  spawnerCounter2  " + spawnerCounter2);
+        
+    }
+    public void sýfýrlama ()
+    {
+        spawnerCounter2 = 0;
+        spawnerCounter1 = 0;
+        GameManager.intance.totalSapawm = (int)Waves[waveCount].x + (int)Waves[waveCount].y + GameManager.intance.totalSapawm;
+        GameManager.intance.kontrolcu = true;
     }
 
     IEnumerator spawmObj()
     {
         while (true)
         {
+            Debug.Log(name+" "+ IsWaveStarted);
             if (IsWaveStarted)
             {
-                if (total <= 0)
-                {
-                    total += Waves[waveCount].x;
-                    total += Waves[waveCount].y;
-                    GameManager.intance.kontrolcu = true;
-                }
+                
                 if (spawnerCounter2 != Waves[waveCount].y)
                 {
                     
-                        Enemy2Spawner(Waves[waveCount].y);
-                        total--;
+                  Enemy2Spawner(Waves[waveCount].y);
+                  GameManager.intance.totalSapawm-=1;
                     
                 }
                 yield return new WaitForSeconds(spawnPeriod/2);
@@ -53,31 +57,13 @@ public class Spawn : MonoBehaviour
                 if (spawnerCounter1 != Waves[waveCount].x)
                 {
                     
-                        Enemy1Spawner(Waves[waveCount].x);
-                        total--;
+                  Enemy1Spawner(Waves[waveCount].x);
+                  GameManager.intance.totalSapawm -= 1;
                     
                 }
             }
-            if (total <= 0)
-            {
-               
-                GameManager.waveIsContinious = false;
-                
-                if (GameManager.intance.currentEnemies.Count <= 0&&GameManager.intance.kontrolcu)
-                {
-                    GameManager.intance.waveBreakTime = 30;
-                    Shop.instante.OpenPanel();
-                    GameManager.intance.spawmIsStoped = true;
-                    GameManager.intance.kontrolcu = false;
-                    waveCount++;
-                    spawnerCounter2 = 0;
-                    spawnerCounter1 = 0;
-                    EventManager.WaveEndAction();
-
-                }
-
-            }
-            yield return new WaitForSeconds(spawnPeriod);
+            
+            yield return new WaitForSeconds(spawnPeriod/2);
         }
     }
     public void Enemy1Spawner(float x)
@@ -85,7 +71,7 @@ public class Spawn : MonoBehaviour
         
         if (x>0)
         {
-            GameObject a= Instantiate(Enemies[0]);
+            GameObject a= Instantiate(Enemies[0],transform.position,Quaternion.identity);
             GameManager.intance.currentEnemies.Add(a);
             spawnerCounter1++;
         }
@@ -96,7 +82,7 @@ public class Spawn : MonoBehaviour
         
         if (y > 0)
         {
-            GameObject a = Instantiate(Enemies[1]);
+            GameObject a = Instantiate(Enemies[1],transform.position, Quaternion.identity);
             GameManager.intance.currentEnemies.Add(a);
             spawnerCounter2++;
         }

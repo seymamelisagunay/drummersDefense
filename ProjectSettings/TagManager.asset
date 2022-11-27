@@ -10,6 +10,8 @@ TagManager:
   - tower
   - Target
   - enemy
+  - mainDamage
+  - spawner
   layers:
   - Default
   - TransparentFX

@@ -17,8 +17,8 @@ public class Shop : MonoBehaviour
     public LayerMask layer;
     RaycastHit hit;
     public bool onPresCreat;
-    public AudioSource audioSource;
-    public List<AudioClip> sounds;
+    public AudioSource moneySpendSound;
+
 
     private void Awake()
     {
@@ -30,7 +30,7 @@ public class Shop : MonoBehaviour
         instante = this;
         closePanel();
         onPresCreat = false;
-        audioSource = GetComponent<AudioSource>();
+        moneySpendSound = GetComponent<AudioSource>();
 
 
     }
@@ -69,7 +69,7 @@ public class Shop : MonoBehaviour
             }
         }
 
-        if (GameManager.waveIsContinious&&shopPanel.activeSelf)
+        if (GameManager.intance.waveIsContinious&&shopPanel.activeSelf)
         {
             closePanel();
         }
@@ -139,8 +139,7 @@ public class Shop : MonoBehaviour
     {
         if (GameManager.money>= tower1Price)
         {
-            audioSource.clip = sounds[0];
-            audioSource.Play();
+            moneySpendSound.Play();
             GameManager.money -= tower1Price;
             Instantiate(tower1, Vector3.up*-5, Quaternion.identity);
             closePanel();
@@ -153,8 +152,7 @@ public class Shop : MonoBehaviour
     {
         if (GameManager.money >= tower2Price)
         {
-            audioSource.clip = sounds[0];
-            audioSource.Play();
+            moneySpendSound.Play();
             GameManager.money -= tower2Price;
             Instantiate(tower2, Vector3.up * -5, Quaternion.identity);
             closePanel();
@@ -165,8 +163,7 @@ public class Shop : MonoBehaviour
     {
         if (GameManager.money >= wall1Price)
         {
-            audioSource.clip = sounds[0];
-            audioSource.Play();
+            moneySpendSound.Play();
             GameManager.money -= wall1Price;
             Instantiate(wall1, Vector3.up * -5, Quaternion.identity);
             closePanel();

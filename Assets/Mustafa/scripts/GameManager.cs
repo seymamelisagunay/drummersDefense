@@ -10,26 +10,39 @@ public class GameManager : MonoBehaviour
     public float waveBreakTime;
     public bool spawmIsStoped=false;
 
-    public static bool waveIsContinious;
+    public bool waveIsContinious;
     public bool kontrolcu;
-    [HideInInspector]public float timer;
+    public float timer;
     public List<GameObject> currentEnemies;
-    void Start()
+
+    public int totalSapawm;
+    public int waveCount;
+    public GameObject[] spwaners;
+
+    private void Awake()
     {
         money = Vmoney;
         waveIsContinious = true;
-        kontrolcu = true;   
+        kontrolcu = true;
         intance = this;
+    }
+    void Start()
+    {
+        spwaners = GameObject.FindGameObjectsWithTag("spawner");
     }
     private void Update()
     {
         
-        if (spawmIsStoped)
+        if (spawmIsStoped)// false kalýyor
         {
             timer += Time.deltaTime;
             if (timer >= waveBreakTime)
             {
-                waveIsContinious = true;
+                waveIsContinious = true; //*****
+                for (int i = 0; i < spwaners.Length; i++)
+                {
+                    spwaners[i].GetComponent<Spawn>().sýfýrlama();
+                }
                 spawmIsStoped=false;
                 Shop.instante.onPresCreat = false;
                 Shop.instante.closePanel();
@@ -37,8 +50,23 @@ public class GameManager : MonoBehaviour
 
             }
         }
-            
-        
-       
+
+        if (totalSapawm <= 0 && kontrolcu)
+        {
+            waveIsContinious = false;
+
+            if (currentEnemies.Count <= 0)
+            {
+                waveBreakTime = 30;
+                Shop.instante.OpenPanel();   
+                waveCount++;               
+                EventManager.WaveEndAction();
+                spawmIsStoped = true;
+                kontrolcu = false;
+
+            }
+
+        }
+
     }
 }
