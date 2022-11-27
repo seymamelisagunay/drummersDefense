@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BaseAttack : TowerAttack
 {
-    
+    public AudioSource drum;
     void Start()
     {
-        
+        drum = GetComponent<AudioSource>();
+        drum.Play();
     }
 
     // Update is called once per frame

@@ -17,6 +17,7 @@ public class Shop : MonoBehaviour
     public LayerMask layer;
     RaycastHit hit;
     public bool onPresCreat;
+    public AudioSource moneySpendSound;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class Shop : MonoBehaviour
         instante = this;
         closePanel();
         onPresCreat = false;
+        moneySpendSound = GetComponent<AudioSource>();
 
 
     }
@@ -97,6 +99,7 @@ public class Shop : MonoBehaviour
     {
         if (GameManager.money>= tower1Price)
         {
+            moneySpendSound.Play();
             GameManager.money -= tower1Price;
             Instantiate(tower1, Vector3.up*-5, Quaternion.identity);
             closePanel();
@@ -107,6 +110,7 @@ public class Shop : MonoBehaviour
     {
         if (GameManager.money >= tower2Price)
         {
+            moneySpendSound.Play();
             GameManager.money -= tower2Price;
             Instantiate(tower2, Vector3.up * -5, Quaternion.identity);
             closePanel();
@@ -117,6 +121,7 @@ public class Shop : MonoBehaviour
     {
         if (GameManager.money >= wall1Price)
         {
+            moneySpendSound.Play();
             GameManager.money -= wall1Price;
             Instantiate(wall1, Vector3.up * -5, Quaternion.identity);
             closePanel();
