@@ -98,7 +98,7 @@ public class Shop : MonoBehaviour
             
         }
 
-        buyTower1btn(); buyTower2btn(); buyWallbtn();
+        buyTower1btn(); buyTower2btn(); buyWallbtn(); EndShoppingBtn();
     }
 
     public void buyTower1()
@@ -195,6 +195,17 @@ public class Shop : MonoBehaviour
 
             }
         }
+    }
+
+    public void EndShoppingBtn()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.intance.waveBreakTime = 0;
+            WaveTime.text = (int)(GameManager.intance.waveBreakTime - GameManager.intance.timer) + "";
+            closePanel();
+        }
+
     }
 }
  

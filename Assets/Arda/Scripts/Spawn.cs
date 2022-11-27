@@ -65,6 +65,7 @@ public class Spawn : MonoBehaviour
                 
                 if (GameManager.intance.currentEnemies.Count <= 0&&GameManager.intance.kontrolcu)
                 {
+                    GameManager.intance.waveBreakTime = 30;
                     Shop.instante.OpenPanel();
                     GameManager.intance.spawmIsStoped = true;
                     GameManager.intance.kontrolcu = false;
