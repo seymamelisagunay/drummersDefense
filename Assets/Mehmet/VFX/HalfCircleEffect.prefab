@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1110284515709133292}
   - component: {fileID: 5404199762315662212}
   - component: {fileID: 6025678798314677167}
+  - component: {fileID: 5225253726102433775}
+  - component: {fileID: 6231834692625242099}
   m_Layer: 0
   m_Name: HalfCircleEffect
   m_TagString: Untagged
@@ -48,7 +50,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -4812,3 +4814,29 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5225253726102433775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4585616315494137761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7646dd847bf1a5e43bea81a800d3a1a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
+--- !u!114 &6231834692625242099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4585616315494137761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c548990911b2b34097b46f3fc0fb7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 5

@@ -17,7 +17,7 @@ public class cineA : MonoBehaviour
     public float speed;
     void Start()
     {
-        camTran.position = new Vector3(0f, 60f, -13.2f);
+        //camTran.position = new Vector3(0f, 60f, -13.2f);
         baseDistanceToPlayer = Vector3.Distance(transform.position, TargetTransform.position);
         transform.position = new Vector3();
 
@@ -28,7 +28,6 @@ public class cineA : MonoBehaviour
 
         fov -= Input.GetAxis("Mouse ScrollWheel") * zoomSensitivity;
         fov = Mathf.Clamp(fov, minSize, maxSize);
-        Debug.Log(fov);
         Camera.main.orthographicSize = fov;
     }
  
@@ -41,10 +40,8 @@ public class cineA : MonoBehaviour
 
  
         transform.position = Vector3.Lerp(transform.position, InitPos(), 0.05f);
-        Debug.Log("if");
  
         transform.position = Vector3.Lerp(transform.position, CalculatePos(), 0.05f);
-        Debug.Log("if1");
     }
 
 
