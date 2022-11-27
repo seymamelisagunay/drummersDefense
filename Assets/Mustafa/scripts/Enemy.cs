@@ -14,10 +14,12 @@ public class Enemy : MonoBehaviour
     public float heal;
     public List<TowerAttack> TowerAttackTriggers;
     public float cost;
+    public AudioSource coin;
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Target");
         ai = GetComponent<NavMeshAgent>();
+        coin = GetComponent<AudioSource>();
     }
 
     private void OnDestroy()
@@ -33,6 +35,7 @@ public class Enemy : MonoBehaviour
         heal -= a;
         if (heal<=0)
         {
+            AudioSource.PlayClipAtPoint(coin.clip, transform.position);
             GameManager.money += cost;
             Destroy(gameObject);
         }
